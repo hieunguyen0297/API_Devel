@@ -10,7 +10,7 @@ const errorHandler = (err, req, res, next) => {
 
     //Mongoose bad Object ID
     if(err.name === 'CastError'){
-        const message = `Resource not found with the ID of ${err.value}`
+        const message = `Resource not found`
         error = new ErrorResponse(message, 404)
     }
 
@@ -21,6 +21,11 @@ const errorHandler = (err, req, res, next) => {
 
     if(err.name === 'ValidationError'){
         const message = Object.values(err.errors).map(val => val.message)
+        error = new ErrorResponse(message, 400)
+    }
+
+    if(err.name === 'JsonWebTokenError'){
+        const message = `Hey, we need to verify your credentials, please login and try again!`;
         error = new ErrorResponse(message, 400)
     }
 

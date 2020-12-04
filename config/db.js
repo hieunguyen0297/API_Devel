@@ -10,7 +10,7 @@ const connectDB = async () => {
         useUnifiedTopology: true
     });
 
-    console.log(`Mongoose Connected: ${conn.connection.host}`.magenta)
+    console.log(`Mongoose Connected: ${conn.connection.host}`.black.bgMagenta)
 }
 
 
