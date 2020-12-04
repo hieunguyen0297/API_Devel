@@ -22,7 +22,7 @@ npm start
 ### License: HN
 
 
-# Project Description
+# Project Description / Outline
 
 ### Bootcamps
 - List all bootcamps in the database
